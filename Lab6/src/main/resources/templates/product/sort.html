@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Sorting</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+
+        h3 {
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        h3 span {
+            background-color: #e0eaff;
+            color: #0047b3;
+            padding: 3px 8px;
+            border-radius: 3px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        table, th, td {
+            border: 1px solid #000;
+        }
+
+        th, td {
+            padding: 6px 10px;
+            text-align: left;
+        }
+
+        th a {
+            text-decoration: none;
+            color: blue;
+            font-weight: bold;
+        }
+
+        th a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h3>SORTING BY <span th:text="${field}"></span></h3>
+
+    <table>
+        <tr>
+            <th><a href="/product/sort?field=id">Id</a></th>
+            <th><a href="/product/sort?field=name">Name</a></th>
+            <th><a href="/product/sort?field=price">Price</a></th>
+            <th><a href="/product/sort?field=createDate">Date</a></th>
+        </tr>
+        <th:block th:each="item : ${items}">
+            <tr>
+                <td th:text="${item.id}"></td>
+                <td th:text="${item.name}"></td>
+                <td th:text="${item.price}"></td>
+                <td th:text="${#dates.format(item.createDate, 'yyyy-MM-dd')}"></td>
+            </tr>
+        </th:block>
+    </table>
+</body>
+</html>

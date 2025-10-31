@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="/param/save/2025" method="post">
+    <input name="y" value="2031"> <br>
+    <button>Save</button>
+</form>
+
+<ul>
+    <li th:if="${x != null}" th:text="'x = ' + ${x}"></li>
+    <li th:if="${y != null}" th:text="'y = ' + ${y}"></li>
+</ul>
+</body>
+</html>
