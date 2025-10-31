@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Result Page</title>
+</head>
+<body>
+    <!-- Hiển thị message từ Model (m2 -> forward:/a) -->
+    <h1 th:text="${message}">Model message</h1>
+
+    <!-- Hiển thị message từ RedirectAttributes (m3 -> redirect:/a?message=...) -->
+    <h1 th:text="${param.message}">Param message</h1>
+</body>
+</html>
